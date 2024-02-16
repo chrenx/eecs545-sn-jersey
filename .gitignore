@@ -1,6 +1,6 @@
-data/jersey-2023/
+/data/jersey-2023/
 
 
 
 # exceptions
-!data/.gitkeep
+!/data/.gitkeep
