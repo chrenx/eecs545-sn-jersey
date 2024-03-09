@@ -1,8 +1,9 @@
+
 from torch.utils.data import Dataset
 
 
 class SoccerNet(Dataset):
-    def __init__(self):
+    def __init__(self, args):
         super().__init__()
         
 
