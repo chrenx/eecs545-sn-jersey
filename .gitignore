@@ -1,7 +1,6 @@
 /data/*
 
 
-
 # exceptions
 !/data/.gitkeep
 !/data/jersey-2023/.gitkeep
