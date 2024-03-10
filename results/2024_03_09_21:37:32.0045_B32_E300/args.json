@@ -1,0 +1,12 @@
+{
+  "batch_size": 32,
+  "current_time": "2024_03_09_21:37:32.0045",
+  "dataset": "soccernet_dataset",
+  "device": "cuda",
+  "dir_ckpt": "results/2024_03_09_21:37:32.0045_B32_E300/ckpt",
+  "dir_results": "results/2024_03_09_21:37:32.0045_B32_E300",
+  "dir_tb": "results/2024_03_09_21:37:32.0045_B32_E300/tb",
+  "max_epochs": 300,
+  "optimizer": "SGD",
+  "output_file": "results/2024_03_09_21:37:32.0045_B32_E300/output.log"
+}
