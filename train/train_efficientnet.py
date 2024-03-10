@@ -104,8 +104,7 @@ def train_efficientnet(args):
         args.printout = max_epochs
 
         for epoch in max_epochs:
-            # args.printout.set_description(f"Epoch {epoch}")
-            # args.printout.set_description(f"Epoch {epoch}")
+            args.printout.set_description(f"Epoch {epoch}")
             args.current_epoch = epoch
 
             #! TRAIN ===========================================================
