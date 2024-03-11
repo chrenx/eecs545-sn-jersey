@@ -3,7 +3,23 @@ from datetime import timedelta
 
 import torch
 from timeit import default_timer as timer
+from torch.utils.data import DataLoader
 from tqdm.auto import tqdm
+
+from data.custom_dataset import CustomDataset
+
+def get_data_loader(args, mode):
+    dataset = CustomDataset(args, mode=mode)
+    data_loader = DataLoader(
+        dataset=dataset,
+        batch_size=args.batch_size,
+        drop_last=True,
+        shuffle=True,
+        pin_memory=True,
+        num_workers=args.num_workers
+    )
+    print(f"{mode} data loader done ...")
+    return data_loader
 
 
 def track_loss(results, args, mode):

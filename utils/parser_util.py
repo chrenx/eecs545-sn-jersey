@@ -14,7 +14,7 @@ def get_args():
     dir_results = os.path.join("results", current_time)
 
     parser = ArgumentParser()
-    parser.add_argument("--batch_size", type=int, default=32)
+    parser.add_argument("--batch_size", type=int, default=256)
     parser.add_argument("--dataset", type=str, default="soccernet_dataset")
     parser.add_argument("--lr", str=float, default=0.1, help="initial lr")
     parser.add_argument("--max_epochs", type=int, default=300)

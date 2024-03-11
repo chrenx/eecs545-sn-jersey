@@ -1,4 +1,10 @@
 /data/jersey-2023/*
+/testing/*
+/mnist/*
+
 
 # exceptions
 !/data/jersey-2023/.gitkeep
+!/mnist/data
+!/mnist/data_padding
+!/mnist/train_mnist_padding.ipynb

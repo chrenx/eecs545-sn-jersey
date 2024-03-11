@@ -3,15 +3,14 @@ import importlib, os, sys
 import numpy as np
 import torch
 from timeit import default_timer as timer
-from torch.utils.data import DataLoader
 from torch.utils.tensorboard import SummaryWriter
 from tqdm.auto import tqdm
 
-from data.custom_dataset import CustomDataset
 from model.efficientnet import EfficientNetV2
 from optimizer.sam import SAM
 from utils.parser_util import get_args
-from utils.train_util import train_step, test_step, print_train_time, save_ckpt
+from utils.train_util import train_step, test_step, print_train_time, \
+                             save_ckpt, get_data_loader
 
 
 def get_optimizer(args, model):
@@ -64,38 +63,19 @@ def train_efficientnet(args):
         print("Training from begining")
 
     #! LOAD data ===============================================================
-    train_dataset = CustomDataset(args, mode="train")
-    test_dataset = CustomDataset(args, mode="test")
-
-    train_dataloader = DataLoader(
-        dataset=train_dataset,
-        batch_size=args.batch_size,
-        drop_last=True,
-        shuffle=True,
-        pin_memory=True,
-        num_workers=args.num_workers
-    )
-    print("train_dataloader done...")
-
-    test_dataloader = DataLoader(
-        dataset=test_dataset,
-        batch_size=args.batch_size,
-        drop_last=True,
-        shuffle=True,
-        pin_memory=True,
-        num_workers=args.num_workers
-    )
-    print("test_dataloader done...")
+    train_data_loader = get_data_loader(args, mode="train")
+    test_data_loader = get_data_loader(args, mode="test")
 
     start_train_time = timer()
     args.offset_time = 0
-
 
     print("Training starts ==========================================")
 
     torch.manual_seed(args.random_seed)
     torch.cuda.manual_seed(args.random_seed)
     np.random.seed(args.random_seed)
+
+    exit(0)
 
     # args.early_stopper = EarlyStopper(args.no_early_stop)
 
@@ -109,14 +89,14 @@ def train_efficientnet(args):
 
             #! TRAIN ===========================================================
             train_step(model=model,
-                       data_loader=train_dataloader,
+                       data_loader=train_data_loader,
                        optimizer=optimizer,
                        args=args)
 
             #! TEST ============================================================
             if (epoch + 1) % args.validation_every_n_epochs == 0:
                 test_step(model=model,
-                        data_loader=test_dataloader,
+                        data_loader=test_data_loader,
                         args=args)
  
             #! SAVE CKPT =======================================================
@@ -140,3 +120,4 @@ if __name__ == "__main__":
         print(torch.cuda.get_device_name(0))
     train_efficientnet(args)
     f.close()
+
