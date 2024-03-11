@@ -9,3 +9,4 @@
 !/mnist/data_padding
 !/mnist/train_mnist_padding.ipynb
 !/mnist/environment.yml
+!/mnist/main.py
