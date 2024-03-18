@@ -2,7 +2,7 @@
 /testing/*
 /mnist/*
 /yolo-bb/datasets/*
-
+/yolo-bb/runs/*
 
 # exceptions
 !/data/jersey-2023/.gitkeep
