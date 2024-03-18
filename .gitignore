@@ -1,8 +1,7 @@
 /data/jersey-2023/*
 /testing/*
 /mnist/*
-/yolo-bb/datasets/*
-/yolo-bb/runs/*
+/yolo-bb/*
 
 # exceptions
 !/data/jersey-2023/.gitkeep
@@ -12,3 +11,5 @@
 !/mnist/environment.yml
 !/mnist/main.py
 !/yolo-bb/datasets/.gitkeep
+!/yolo-bb/train_yolo_obb.py
+!/yolo-bb/data.yaml
