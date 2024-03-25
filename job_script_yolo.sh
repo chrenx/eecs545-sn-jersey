@@ -10,7 +10,7 @@
 #SBATCH --mail-type=BEGIN,END
 #SBATCH --time=00-08:00:00
 #SBATCH --ntasks-per-node=1
-#SBATCH --mem=45GB
+#SBATCH --mem=30GB
 #SBATCH --account=eecs545w24_class
 #SBATCH --partition=spgpu
 #SBATCH --gres=gpu:1
