@@ -1,4 +1,5 @@
 /data/jersey-2023/*
+/data/*
 /testing/*
 /mnist/*
 /yolo-bb/*
