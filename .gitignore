@@ -4,6 +4,7 @@
 /mnist/*
 /yolo-bb/*
 /results/*
+/yolo-cls/*
 
 # exceptions
 !/data/jersey-2023/.gitkeep
@@ -16,3 +17,6 @@
 !/yolo-bb/train_yolo_obb.py
 !/yolo-bb/data.yaml
 !/yolo-bb/best-03-25.pt
+!/yolo-cls/datasets/.gitkeep
+!/yolo-cls/data.yml
+!/yolo-cls/train_yolo_cls.py

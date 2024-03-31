@@ -5,7 +5,7 @@
 
 #"#SBATCH" directives that convey submission options:
 
-#SBATCH --job-name=clean_chal
+#SBATCH --job-name=cls-train
 #SBATCH --mail-user=chrenx@umich.edu
 #SBATCH --mail-type=BEGIN,END
 #SBATCH --time=00-08:00:00
@@ -14,13 +14,13 @@
 #SBATCH --account=eecs545w24_class
 #SBATCH --partition=standard
 #SBATCH --cpus-per-task=4
-#SBATCH --output=/home/chrenx/eecs545-sn-jersey/clean_chal_data-%x-%j.log
+#SBATCH --output=/home/chrenx/eecs545-sn-jersey/cls-train-%x-%j.log
 
 eval "$(conda shell.bash hook)"
 conda init bash
 conda activate soccernet
 # cd /home/chrenx/eecs545-sn-jersey/yolo-bb
-cd /home/chrenx/eecs545-sn-jersey
+cd /home/chrenx/eecs545-sn-jersey/yolo-cls
 
 # python -m train_yolo_obb
-python -m filter_soccernet --mode 'challenge'
+python -m train_yolo_cls

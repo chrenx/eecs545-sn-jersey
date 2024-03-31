@@ -182,8 +182,9 @@ if __name__ == "__main__":
 
     args, unknown = parser.parse_known_args()
 
-    args.clean_dir = f'data/jersey-2023-cleaned/{args.mode}/images'
-    args.input_path = f'data/jersey-2023/{args.mode}'
+    # args.clean_dir = f'data/jersey-2023-cleaned/{args.mode}/images'
+    # args.input_path = f'data/jersey-2023/{args.mode}'
+    args.input_path = f'data/jersey-2023-cleaned/{args.mode}'
 
     model = YOLO(args.model_path)
 
