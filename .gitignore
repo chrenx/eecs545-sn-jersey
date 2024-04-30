@@ -5,6 +5,18 @@
 /yolo-bb/*
 /results/*
 /yolo-cls/*
+/crop/*
+/DB/outputs/*
+/DB/workspace/*
+/DB/datasets/*
+/DB/models/*
+/DB/demo_results/*
+/DB/struture/representers/setup.py
+/ABINet/workdir/*
+/ABINet/data/*
+/ABINet/docker/*
+
+
 
 # exceptions
 !/data/jersey-2023/.gitkeep
