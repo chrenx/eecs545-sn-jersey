@@ -11,7 +11,7 @@
 
 
 <!-- TABLE OF CONTENTS -->
-<details>
+<!-- <details> -->
   <summary>Table of Contents</summary>
   <ol>
     <li>
@@ -26,7 +26,7 @@
       </ul>
     </li>
   </ol>
-</details>
+<!-- </details> -->
 
 
 
