@@ -10,6 +10,9 @@
 /runs/*
 send_all.sh
 /wrn/datasets/*
+/wrn/svhn-best.pt
+/wrn/yolo-best-03-25.pt
+
 
 # exceptions
 !/data/jersey-2023/.gitkeep
