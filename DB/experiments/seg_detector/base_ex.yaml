@@ -1,0 +1,30 @@
+import:
+    - 'experiments/base.yaml'
+package:
+    - 'decoders.seg_detector_loss'
+define:
+  - name: train_data
+    class: ImageJerDataset
+    data_dir:
+        - '/home/yuningc/roboflow/train'
+    processes:
+        - class: AugmentJerseyData
+          augmenter_args:
+              - ['Resize', {'width': 256, 'height': 128}]
+          only_resize: True
+          keep_ratio: False
+        - class: NormalizeImage
+
+  - name: validate_data
+    class: ImageJerDataset
+    data_dir:
+        - '/home/yuningc/roboflow/test'
+    processes:
+        - class: AugmentJerseyData
+          augmenter_args:
+             - ['Resize', {'width': 256, 'height': 128}]
+              # - ['Resize', {'width': 1280, 'height': 736}]
+              # - ['Resize', {'width': 2048, 'height': 1152}]
+          only_resize: True
+          keep_ratio: False
+        - class: NormalizeImage
