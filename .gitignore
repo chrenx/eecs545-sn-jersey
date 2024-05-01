@@ -1,21 +1,17 @@
 /data/jersey-2023/*
 /data/*
 /testing/*
-/mnist/*
+/mnist/custom_datasets/*
+/mnist/custom_datasets\ copy/*
+/mnist/data/*
 /yolo-bb/*
 /results/*
 /yolo-cls/*
-/crop/*
-/DB/outputs/*
-/DB/workspace/*
-/DB/datasets/*
-/DB/models/*
-/DB/demo_results/*
-/DB/struture/representers/setup.py
-/ABINet/workdir/*
-/ABINet/data/*
-/ABINet/docker/*
-
+/runs/*
+send_all.sh
+/wrn/datasets/*
+/wrn/svhn-best.pt
+/wrn/yolo-best-03-25.pt
 
 
 # exceptions

@@ -70,7 +70,7 @@ for img_name in tqdm(os.listdir(img_dir)):
         continue
 
     #!  !!!!!!
-    img_name = "cga_cacique_out_1_3_jpg.rf.6078e3faf1b97bde0597f06937e950eb.jpg"
+    # img_name = "cga_cacique_out_1_3_jpg.rf.6078e3faf1b97bde0597f06937e950eb.jpg"
 
     orig_img = cv2.imread(os.path.join(img_dir, img_name))
     H, W, _ = orig_img.shape
@@ -136,5 +136,3 @@ for img_name in tqdm(os.listdir(img_dir)):
             cv2.imwrite(dest, cropped_img)
         except:
             continue
-
-    break
