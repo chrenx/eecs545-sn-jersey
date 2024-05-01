@@ -1,10 +1,15 @@
 /data/jersey-2023/*
 /data/*
 /testing/*
-/mnist/*
+/mnist/custom_datasets/*
+/mnist/custom_datasets\ copy/*
+/mnist/data/*
 /yolo-bb/*
 /results/*
 /yolo-cls/*
+/runs/*
+send_all.sh
+/wrn/datasets/*
 
 # exceptions
 !/data/jersey-2023/.gitkeep

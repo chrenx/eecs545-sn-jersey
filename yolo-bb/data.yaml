@@ -1,7 +1,7 @@
 path: .
 
 train: train
-val: valid
+val: test
 # test: test/images
 
 names: 

@@ -13,6 +13,8 @@ def crop_data(model, args):
     img_folder_names = os.listdir(img_folder_path)
     img_folder_names = sorted([int(i) for i in img_folder_names if i[0] != '.'])
 
+    non_detected_folder = []
+
     # iterate the images folder
     with tqdm(range(args.start_idx, len(img_folder_names))) as max_len:
         for idx in max_len:
@@ -57,6 +59,7 @@ def crop_data(model, args):
                     continue
                 # no digits detected
                 if len(res.obb.cls) == 0:
+                    non_detected_folder.append(index)
                     continue
                 # digits detected
                 x1, y1, x2, y2 = None, None, None, None
@@ -98,6 +101,7 @@ def crop_data(model, args):
                 try:
                     cv2.imwrite(dest, cropped_img)
                 except:
+                    non_detected_folder.append(index)
                     continue
 
 
