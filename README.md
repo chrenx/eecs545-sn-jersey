@@ -41,7 +41,9 @@ This project is dealing with the challenge from SoccerNet to identify players' j
 <!-- GETTING STARTED -->
 ## Getting Started
 
-The following contains several work including model training, intermediate data processing, etc., that are used to improve the accuracy of final challenge result. The order is not sequential. 
+The following contains several work including model training, intermediate data processing, etc., that are used to improve the final challenge accuracy. The order is not sequential. 
+
+
 
 ### Environment Configuration
 * conda
@@ -51,11 +53,43 @@ The following contains several work including model training, intermediate data 
     It may require some other packages when running some code. Please download required packages when necessary.
 
 ### Model Training
-#### DBNet
+Run in Greatlakes. For each model training, the data we are using is from <a href="https://universe.roboflow.com/volleyai-actions/jersey-number-detection-s01j4">Volleyball dataset</a>. We downloaded it in yolov8 data format. 
+- DBNet detection
   ```
   cd DB
-  python train.py /home/XXXX/DB/experiments/seg_detector/jersey_extra_dataset.yaml --num_gpus 1 --validate
+  python train.py experiments/seg_detector/jersey_extra_dataset.yaml --num_gpus 1 --validate
   ```
+- ABINet recognition
+  ```
+  cd ABINet
+  python main.py --config=configs/train_abinet.yaml
+  ```
+- YoloV8 detection
+  ```
+  cd yolo-bb
+  python -m yolo_obb_trainer
+  ```
+- YoloV8 recognition
+  ```
+  cd yolo-cls
+  python -m train_yolo_cls
+  ```  
+- self-made CNN arch for recognition
+  ```
+  cd mnist
+  python -m main
+  ```
+
+### Data Processing
+Extract Keyframes and Crop
+  - we conducted several ways to extract the keyframes from the tracklet.  
+    - In DB, run the script ```crop_challenge.sh```
+    - Others, run the script ```job_script_yolo_clean_chal.sh```
+
+### Prediction
+- In ABINet, run the script ```inference.sh```
+- Others, run the script ```job_script_yolo_predict_chal.sh```
+ 
 
 
 
